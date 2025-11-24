@@ -44,10 +44,8 @@ This demonstrates practical skills needed for:
 
 ## 🧩 Firewall Architecture Diagram
 
-> Add your PNG into `/Diagram/`, then update the link below.
-
 ### 🔽 Diagram Preview  
-![Firewall Architecture](Diagram/firewall_architecture.png)
+[Firewall/Diagram/Firewall diagram.png](https://github.com/ErnestoMPerez/Windows-Firewall-Hardening-Lab/blob/91792ffb8a946625a2312f507abef2934129eb8d/Firewall/Diagram/Firewall%20diagram.png)
 
 ---
 
@@ -113,9 +111,6 @@ New-NetFirewallRule `
 Stored in: Tests/baseline_network_tests.txt
 
 Commands:
-
-powershell
-Copy code
 ping 8.8.8.8
 ping google.com
 tracert google.com
@@ -123,17 +118,12 @@ tracert google.com
 Stored in: Tests/firewall_block_tests.txt
 
 Verification commands:
-
-powershell
-Copy code
 Test-NetConnection -Port 23   # Telnet
 Test-NetConnection -Port 21   # FTP
 Test-NetConnection -Port 445  # SMB
 Test-NetConnection -Port 3389 # RDP
-Expected Result:
 
-yaml
-Copy code
+Expected Result:
 TcpTestSucceeded : False
 📘 Security Justification Summary
 This hardening project prevents:
@@ -189,7 +179,6 @@ Rule testing & validation
 
 🧑‍💻 Author
 Ernesto Perez
-Cybersecurity Student | Blue Team Focus
 📫 Email: ernestomperez1@gmail.com
 
 ⭐ Want to support?
