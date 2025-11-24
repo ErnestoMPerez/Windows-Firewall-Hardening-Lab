@@ -1,0 +1,43 @@
+1. Telnet (TCP 23) – SHOULD BE BLOCKED
+Test-NetConnection -ComputerName google.com -Port 23
+
+2. FTP (TCP 21) – SHOULD BE BLOCKED
+Test-NetConnection -ComputerName google.com -Port 21
+
+3. SMB (TCP 445) – SHOULD BE BLOCKED
+Test-NetConnection -ComputerName google.com -Port 445
+
+4. RDP (TCP 3389) – SHOULD BE BLOCKED
+Test-NetConnection -ComputerName google.com -Port 3389
+
+5. Malware-IP Range Block – SHOULD BE BLOCKED
+Test-NetConnection -ComputerName 45.155.204.10 -Port 443
+
+🔹 B) Test ALLOWED Traffic (Essential Services)
+1. DNS Lookup – SHOULD WORK
+nslookup google.com
+
+2. DNS Port 53 (UDP) – SHOULD WORK
+Test-NetConnection -ComputerName 8.8.8.8 -Port 53 -Udp
+
+3. HTTPS Port 443 – SHOULD WORK
+Test-NetConnection -ComputerName google.com -Port 443
+
+4. Browser Test (Manual)
+
+Open Chrome/Edge and load:
+
+https://google.com
+
+🔹 C) ICMP (Ping) Tests
+
+If you created an ICMP rule:
+
+Ping external site
+ping 8.8.8.8
+
+Ping domain
+ping google.com
+
+Traceroute
+tracert google.com

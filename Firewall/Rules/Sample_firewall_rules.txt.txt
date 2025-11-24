@@ -1,0 +1,78 @@
+==============================
+FIREWALL SECURITY LAB – RULES
+==============================
+
+Author: Ernesto Perez
+Date: 24/11/2025
+Machine: Windows 11
+
+--------------------------------------------
+1. Block Telnet
+--------------------------------------------
+• Direction: Outbound
+• Action: Block
+• Protocol: TCP
+• Port: 23
+• Purpose: Telnet is insecure and often used in attacks.
+
+--------------------------------------------
+2. Block FTP
+--------------------------------------------
+• Direction: Outbound
+• Action: Block
+• Protocol: TCP
+• Port: 21
+• Purpose: FTP transmits credentials in clear text and should not be used.
+
+--------------------------------------------
+3. Block SMB
+--------------------------------------------
+• Direction: Outbound
+• Action: Block
+• Protocol: TCP
+• Port: 445
+• Purpose: Prevents SMB-based lateral movement and ransomware spread.
+
+--------------------------------------------
+4. Block RDP
+--------------------------------------------
+• Direction: Outbound
+• Action: Block
+• Protocol: TCP
+• Port: 3389
+• Purpose: Blocks remote desktop connections leaving the machine.
+
+--------------------------------------------
+5. Block Malicious IP Range
+--------------------------------------------
+• Direction: Outbound
+• Action: Block
+• Remote Address: 45.155.204.0/24
+• Purpose: Known malware distribution network.
+
+--------------------------------------------
+6. Allow DNS
+--------------------------------------------
+• Direction: Outbound
+• Action: Allow
+• Protocol: UDP
+• Port: 53
+• Purpose: Required for normal internet name resolution.
+
+--------------------------------------------
+7. Allow HTTPS
+--------------------------------------------
+• Direction: Outbound
+• Action: Allow
+• Protocol: TCP
+• Port: 443
+• Purpose: Allows normal web browsing and secure connections.
+
+--------------------------------------------
+8. Allow Windows Update
+--------------------------------------------
+• Direction: Outbound
+• Action: Allow
+• Remote Address: Microsoft Update Servers
+• Ports: 80, 443
+• Purpose: Ensure system receives security updates.
